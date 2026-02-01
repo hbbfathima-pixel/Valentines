@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Valentine’s 💘</title>
+  <style>
+    body{
+      margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top, #ffe1ec, #fff);
+      color:#2b2b2b;
+    }
+    .card{
+      width:min(520px, 92vw);
+      background:#ffffffcc;
+      border:1px solid #ffd1df;
+      box-shadow: 0 18px 60px rgba(0,0,0,.10);
+      border-radius:24px;
+      padding:28px;
+      text-align:center;
+      backdrop-filter: blur(8px);
+    }
+    h1{ margin:0 0 8px; font-size:28px;}
+    p{ margin:0 0 18px; line-height:1.5; }
+    .heart{ font-size:42px; margin:10px 0 18px; animation: pulse 1.2s infinite; }
+    @keyframes pulse { 0%,100%{ transform:scale(1);} 50%{ transform:scale(1.12);} }
+    .row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    button{
+      border:0; padding:12px 16px; border-radius:999px; cursor:pointer;
+      font-weight:600; font-size:16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.10);
+    }
+    #yes{ background:#ff3b7a; color:white; }
+    #no{ background:#f2f2f2; color:#333; position:relative; }
+    .note{ margin-top:14px; font-size:14px; color:#666; }
+    .hidden{ display:none; }
+    .msg{
+      margin-top:18px;
+      padding:14px 14px;
+      border-radius:16px;
+      background:#fff;
+      border:1px dashed #ff7aa8;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart">💘</div>
+    <h1 id="title">Hey you…</h1>
+    <p id="subtitle">Will you be my Valentine?</p>
+
+    <div class="row">
+      <button id="yes">Yes 💞</button>
+      <button id="no">No 🙈</button>
+    </div>
+
+    <div id="msg" class="msg hidden"></div>
+    <div class="note">Made with <span aria-label="love">❤️</span> just for you.</div>
+  </div>
+
+  <script>
+    // Customize these lines:
+    const theirName = "You";        // e.g., "tafu"
+    const yourName  = "Me";         // e.g., "Habeeba"
+    const customMessage = "Yay!! Date idea: chai + a walk + dessert? 🍰";
+
+    // Apply customization
+    document.getElementById("title").textContent = `Hey ${tafu}…`;
+    const msgBox = document.getElementById("msg");
+
+    document.getElementById("yes").addEventListener("click", () => {
+      msgBox.classList.remove("hidden");
+      msgBox.innerHTML = `<strong>${habeeba}:</strong> ${happy valentine's beb}`;
+    });
+
+    // Make the "No" button dodge the cursor (fun)
+    const noBtn = document.getElementById("no");
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 220 - 110;
+      const y = Math.random() * 120 - 60;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+</html>
